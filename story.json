@@ -1,15 +1,23 @@
 {
 
+  "info": {
+    "story-name": "Test",
+    "story-description": "This is an example story."
+  },
+
   "1": {
-    "text": "Scene 1"
+    "text": "Scene 1",
+    "buttons": "Go to Scene 2||2;;Go to Scene 3||3"
   },
 
   "2": {
-    "text": "Scene 2"
+    "text": "Scene 2",
+    "buttons": "Scene 3||3"
   },
 
   "3": {
-    "text": "Scene 3"
+    "text": "Scene 3",
+    "buttons": "Back to Scene 1||1"
   }
 
 }
