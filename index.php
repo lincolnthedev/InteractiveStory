@@ -5,16 +5,22 @@ $r = new Predis\Client();
 
     // Start
 
-        if ( $r->hget('scene-text', $_GET['scene']) !== null ) {
-            echo($r->hget('scene-text', $_GET['scene']));
+        $s = json_decode(file_get_contents('story.json'), true);
+
+        if ( $s[$_GET["scene"]]["text"] !== null ) {
+            echo($s[$_GET["scene"]]["text"]);
         } else {
             echo('This scene either does not exist or is missing');
         }
 
         echo('<br><br>');
 
-        foreach($r->smembers($_GET['scene'] . '-buttons') as $button) {
-            echo('<a href="?scene=' . $r->get('button' . $button . '-link') . '">' . $r->get('button' . $button . '-name') . '</a> ');
+        /*
+        foreach($s[$_GET["scene"]]["buttons"] as $button) {
+            echo('<a href="?scene=' . $button["scene"] . '">' . $button["name"] . '</a> ');
         }
+        */
+
+
 
 ?>
