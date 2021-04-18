@@ -34,7 +34,7 @@ body {
 
 <?php
 
-        $s = json_decode(file_get_contents($_GET["data"]), true);
+        $s = json_decode(file_get_contents('https://raw.githubusercontent.com/' . $_GET["data"] . '/main/story.json'), true);
 
         if ( $s[$_GET["scene"]]["text"] !== null ) {
             echo($s[$_GET["scene"]]["text"]);
