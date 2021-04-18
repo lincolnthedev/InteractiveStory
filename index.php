@@ -26,7 +26,6 @@ body {
 
 <br>
 
-<h3>Test</h3>
 
 
 
@@ -35,6 +34,8 @@ body {
 <?php
 
         $s = json_decode(file_get_contents('https://raw.githubusercontent.com/' . $_GET["data"] . '/main/story.json'), true);
+
+        echo('<h3>' . $s['info']['story-name'] . '</h3><p>' . $s['info']['story-description'] . '</p><br>');
 
         if ( $s[$_GET["scene"]]["text"] !== null ) {
             echo($s[$_GET["scene"]]["text"]);
